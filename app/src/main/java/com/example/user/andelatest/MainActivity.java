@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private ProgressBar progressBar;
     private int pageNumber =2;
     private static  String REQUEST_URL =
-            "https://api.github.com/search/users?q=+language:java+location:lagos&?access_token=3a371d12aee3bbb97e37a8f122aa83f65995c25b";
+            "https://api.github.com/search/users?q=+language:java+location:lagos";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     public void loadNextDataFromApi(int offset) {
 
-        REQUEST_URL = "https://api.github.com/search/users?q=+language:java+location:lagos&page="+offset+"&?access_token=3a371d12aee3bbb97e37a8f122aa83f65995c25b";
+        REQUEST_URL = "https://api.github.com/search/users?q=+language:java+location:lagos&page="+offset;
         getSupportLoaderManager().restartLoader(DEVELOPER_LOADER_ID, null, this);
         developerAdapter.notifyDataSetChanged();
 
